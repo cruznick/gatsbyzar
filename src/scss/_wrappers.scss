@@ -8,15 +8,19 @@
 
 
 #wrapper {
+  position: relative;
   background-color: $dark;
-  height: auto;
+  height: 100vh;
 }
 
 
 .siteTitles,
 .leftContent,
 .rightContent {
+  border-style: dashed;
+  height: auto;
   text-align: justify;
+  padding: 10 0;
   @include grid-column(4);
 
   @include grid-media($tablet) {
@@ -28,3 +32,10 @@
 }
 
 
+.leftContent {
+  position: fixed;
+}
+
+.rightContent {
+  @include grid-push(2);
+}

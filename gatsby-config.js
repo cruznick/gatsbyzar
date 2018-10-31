@@ -34,6 +34,13 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     {
+      resolve: `gatsby-source-filesystem`,
+        options: {
+          path: `${__dirname}/static/img`,
+          name: 'img',
+        },
+      },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
@@ -50,9 +57,19 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [],
+      resolve: `gatsby-transformer-remark`,
+        options: {
+          plugins: [{
+            resolve: `gatsby-remark-relative-images`,
+              options: {
+                name: 'img'
+              }
+            },
+          {
+            resolve: `gatsby-remark-images`,
+              options: {},
+          },
+        ],
       },
     },
     {

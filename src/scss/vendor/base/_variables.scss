@@ -1,0 +1,72 @@
+// Typography
+$base-font-family: 'Raleway', sans-serif;
+$heading-font-family: 'Old Standard TT', serif;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #57648C;
+$dark-wine: #934a5f;
+$medium-purple: #C2B4D6;
+$light-gray: #e5e5e5;
+$dw-transparency: rgba(148, 58, 95, 0.40);
+$dark: #363636;
+
+// Font Colors
+$base-font-color: $light-gray;
+$action-color: $dark-wine;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: $light-gray;
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+// polyfills
+
+.polyImage {
+  object-fit: cover;
+  object-position: bottom;
+  font-family: 'object-fit: cover; object-position: bottom;';
+}
+// Grid
+
+$neat-grid: (
+  columns: 4,
+  gutter: 2em,
+  media: "(min-width:768px)",
+  color: red,
+);
+
+$tablet: (
+  columns: 6,
+  media: "(min-width:1024px)",
+  gutter: 2em,
+  color: yellow,
+);
+
+$desktop: (
+  columns: 8,
+  media: "(min-width:1920px)",
+  gutter: 2em,
+  color:green,
+);
+

@@ -1,0 +1,30 @@
+
+#mainWrapper {
+  @include grid-container;
+  background-color: $light-gray;
+  /* Give app full page to work with */
+  height: 100vh;
+}
+
+
+#wrapper {
+  background-color: $dark;
+  height: auto;
+}
+
+
+.siteTitles,
+.leftContent,
+.rightContent {
+  text-align: justify;
+  @include grid-column(4);
+
+  @include grid-media($tablet) {
+    @include grid-column(3);
+  }
+  @include grid-media($desktop) {
+    @include grid-column(4);
+  }
+}
+
+

@@ -1,0 +1,71 @@
+
+/* Individual item */
+
+.bm-item {
+  display: inline-block;
+  text-align: justify;
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 1em;
+  color: $light-gray;
+  transition: color 0.2s;
+}
+
+/* Change color on hover */
+
+.bm-item:hover {
+  color: $blue;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+
+.bm-burger-button {
+  position: fixed;
+  width: 2em;
+  height: 1em;
+  right: 2vw;
+  top: 2vh;
+}
+
+/* Color/shape of burger icon bars */
+
+.bm-burger-bars {
+  background: $dark;
+}
+
+/* Position and sizing of clickable cross button */
+
+.bm-cross-button {
+  height: 2em;
+  width: 2em;
+}
+
+/* Color/shape of close button cross */
+
+.bm-cross {
+  background: $light-gray;
+}
+
+/* General sidebar styles */
+
+.bm-menu {
+  background: $dw-transparency;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+
+.bm-morph-shape {
+  fill: rgba(0, 0, 0, 0.3)
+}
+
+/* Wrapper for item list */
+
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+

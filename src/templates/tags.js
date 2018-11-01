@@ -1,5 +1,5 @@
 /* eslint-disable */
-// TODO fix eslints errors currently this works
+// TODO fix eslint errors currently this works
 
 import React from 'react'
 import Helmet from 'react-helmet'

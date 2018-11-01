@@ -51,7 +51,6 @@ export const PageQuery = graphql`
       html
       frontmatter {
         title
-        image
       }
     }
   }

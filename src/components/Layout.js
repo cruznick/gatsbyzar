@@ -1,6 +1,4 @@
 import React from 'react'
-// eslint-disable-next-line
-
 import Helmet from 'react-helmet'
 
 import Nav from './Nav'

@@ -2,7 +2,7 @@
   "name": "zar2",
   "version": "0.0.1",
   "description": "site for Zarambeques",
-  "author": "Benjamin J. Martinez <bjm@benjmart.tech>",
+  "author": "Benjamin J. Martine <bjm@benjmart.tech>",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-remark-images": "^2.0.5",
+    "gatsby-remark-images": "^2.0.1",
     "gatsby-remark-relative-images": "^0.2.0",
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.1",

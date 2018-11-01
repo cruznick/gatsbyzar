@@ -6226,7 +6226,7 @@ gatsby-react-router-scroll@^2.0.1:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-remark-images@^2.0.5:
+gatsby-remark-images@^2.0.1:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-2.0.5.tgz#774c90cba3220cc193e15899b6e32f90bd372005"
   integrity sha512-RbceqPk2QrugboDYjTMjofvvCduotk/6bGs93OAzb0UUf41n3ViEEuHZHC1AIr/IgsnUdtDzDPxunP0mDwQcaw==

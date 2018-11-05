@@ -1,0 +1,18 @@
+.titles {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.pageTitle {
+  z-index: 3;
+  position: relative;
+  color: $light-gray;
+  padding: 5em;
+}
+
+.content {
+  padding: 5em;
+  top: vh;
+  font-size: modular-scale(2)
+}

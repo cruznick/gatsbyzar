@@ -51,7 +51,7 @@ $base-timing: ease;
 
 $neat-grid: (
   columns: 4,
-  gutter: 2em,
+  gutter: 0,
   media: "(min-width:768px)",
   color: red,
 );
@@ -59,14 +59,13 @@ $neat-grid: (
 $tablet: (
   columns: 6,
   media: "(min-width:1024px)",
-  gutter: 2em,
+  gutter: 0,
   color: yellow,
 );
 
 $desktop: (
   columns: 8,
   media: "(min-width:1920px)",
-  gutter: 2em,
+  gutter: 0,
   color:green,
 );
-

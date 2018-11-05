@@ -1,6 +1,5 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: test-repo
 
 media_folder: static/img
 public_folder: /img
@@ -21,7 +20,7 @@ collections:
   - name: "pages"
     label: "Pages"
     folder: "src/pages/"
-    create: "true"
+    create: true
     fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "page"}
           - {label: "Title", name: "title", widget: "string"}

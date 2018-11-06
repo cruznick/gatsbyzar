@@ -2,14 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const PageTemplate = ({ title, content, contentComponent, image }) => {
+export const PageTemplate = ({ title, content, contentComponent, cover, images }) => {
   const PageContent = contentComponent || Content
 
   return (
     <React.Fragment>
+      <Helmet title={`${title}`} />
       <div className="leftContent">
         <div className="titles">
           <div className="pageTitle">
@@ -23,7 +25,7 @@ export const PageTemplate = ({ title, content, contentComponent, image }) => {
               width: '100%',
               height: '100%',
             }}
-            fluid={image.fluid}
+            fluid={cover.fluid}
           />
         </div>
       </div>
@@ -38,7 +40,8 @@ PageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-  image: PropTypes.object,
+  cover: PropTypes.object,
+  images: PropTypes.array,
 }
 
 const Page = ({ data }) => {
@@ -50,7 +53,8 @@ const Page = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
-        image={post.frontmatter.image.childImageSharp}
+        cover={post.frontmatter.cover.childImageSharp}
+        images={post.frontmatter.images}
       />
     </Layout>
   )
@@ -68,10 +72,19 @@ export const PageQuery = graphql`
       html
       frontmatter {
         title
-        image {
+        cover {
           childImageSharp {
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        images {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

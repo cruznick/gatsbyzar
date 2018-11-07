@@ -75,7 +75,7 @@ export const DirPageQuery = graphql`
         cover {
           childImageSharp {
             fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
+              srcSet
             }
           }
         }
@@ -83,7 +83,8 @@ export const DirPageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
+                src
+                srcSet
               }
             }
           }

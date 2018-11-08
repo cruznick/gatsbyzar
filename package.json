@@ -36,6 +36,7 @@
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
+    "react-image-lightbox": "^5.0.0",
     "react-images": "^0.5.19",
     "react-modal": "^3.6.1",
     "uuid": "^3.2.1"

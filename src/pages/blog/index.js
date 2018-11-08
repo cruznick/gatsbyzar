@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+              <h1 className="has-text-weight-bold is-size-2">Ultimas Historias</h1>
             </div>
             {posts.map(({ node: post }) => (
               <div
@@ -35,7 +35,7 @@ export default class IndexPage extends React.Component {
                   <br />
                   <br />
                   <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading â†’
+                    Seguir leyendo’
                   </Link>
                 </p>
               </div>

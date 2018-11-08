@@ -5,9 +5,8 @@ import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import ImageGallery from '../components/gallery'
 
-export const PageTemplate = ({ title, content, contentComponent, cover, images }) => {
+export const PageTemplate = ({ title, content, contentComponent, cover }) => {
   const PageContent = contentComponent || Content
 
   return (
@@ -18,7 +17,6 @@ export const PageTemplate = ({ title, content, contentComponent, cover, images }
           <div className="pageTitle">
             <h2>{title}</h2>
           </div>
-          <ImageGallery imgSrc={images.src} imgSrcSet={images.srcSet} />
           <Img
             style={{
               position: 'absolute',
@@ -43,7 +41,6 @@ PageTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   cover: PropTypes.object,
-  images: PropTypes.array,
 }
 
 const Page = ({ data }) => {
@@ -56,7 +53,6 @@ const Page = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
         cover={post.frontmatter.cover.childImageSharp}
-        images={post.frontmatter.images.image.childImageSharp}
       />
     </Layout>
   )
@@ -78,16 +74,6 @@ export const PageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        images {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                src
-                srcSet
-              }
             }
           }
         }

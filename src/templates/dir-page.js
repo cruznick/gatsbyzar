@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const DirPageTemplate = ({ title, content, contentComponent, cover, images }) => {
+export const DirPageTemplate = ({ title, content, contentComponent, cover }) => {
   const DirPageContent = contentComponent || Content
 
   return (
@@ -54,7 +54,6 @@ const DirPage = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
         cover={post.frontmatter.cover.childImageSharp}
-        images={post.frontmatter.images}
       />
     </Layout>
   )
@@ -76,16 +75,6 @@ export const DirPageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1000) {
               srcSet
-            }
-          }
-        }
-        images {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                src
-                srcSet
-              }
             }
           }
         }

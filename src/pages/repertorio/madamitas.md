@@ -7,14 +7,13 @@ cover: /img/cover-mada.jpg
 
 # Manifestaciones dancísticas y teatrales del barroco novohispano
 
-
 ## Reseña del Montaje:
 
-Basado en esta celebración novohispana, en la que participaba toda la Ciudad de México, se
-fundamenta en documentos pertenecientes al fondo reservado de la UNAM, El Archivo General
-de la Nación y El Archivo de Indias de Sevilla, en los que dan noticias de cómo eran los
-pobladores de la Ciudad de México entre los años 1670 y 1730, a través de los recuerdos de
-una educanda del colegio de San Miguel de Belén.
+Basado en esta celebración novohispana, en la que participaba toda la Ciudad de
+México, se fundamenta en documentos pertenecientes al fondo reservado de la UNAM,
+El Archivo General de la Nación y El Archivo de Indias de Sevilla, en los que dan
+noticias de cómo eran los pobladores de la Ciudad de México entre los años 1670
+y 1730, a través de los recuerdos de una educanda del colegio de San Miguel de Belén.
 
 ### Programa:
 

@@ -12,14 +12,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Old Standard TT:regular', 'Raleway:regular'],
-        },
-      },
-    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,6 +26,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+
     // Including in your Gatsby plugins will transform any paths in your frontmatter
     {
       resolve: `gatsby-source-filesystem`,

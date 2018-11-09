@@ -12,7 +12,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description, title
     <section className="contentWrapper">
       {helmet || ''}
       <div className="leftContent">
-        <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
+        <h1>{title}</h1>
         <p>{description}</p>
       </div>
       <div className="rightContent">

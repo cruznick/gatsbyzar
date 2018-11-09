@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { graphql } from 'gatsby'
-import PostLink from '../../components/postlink'
+import PostLink from '../../components/PostLink'
 import Layout from '../../components/Layout'
 
 const IndexPage = ({

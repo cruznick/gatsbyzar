@@ -15,22 +15,20 @@ export const PageTemplate = ({ title, content, contentComponent, cover }) => {
       <div className="leftContent">
         <div className="titles">
           <div className="pageTitle">
-            <h2>{title}</h2>
+            <div className="titleContent">
+              <h2>{title}</h2>
+            </div>
           </div>
           <Img
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-            }}
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
             fluid={cover.fluid}
           />
         </div>
       </div>
       <div className="rightContent">
-        <PageContent className="content" content={content} />
+        <div className="content">
+          <PageContent className="innerContent" content={content} />
+        </div>
       </div>
     </React.Fragment>
   )

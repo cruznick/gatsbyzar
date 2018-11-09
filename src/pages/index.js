@@ -1,6 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { FaFacebook, FaInstagram, FaYoutubeSquare, FaTwitterSquare } from 'react-icons/fa'
+import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 
 export default () => (
@@ -21,6 +22,7 @@ export default () => (
     `}
     render={data => (
       <Layout>
+        <Helmet title={data.site.siteMetadata.title} />
         <section className="contentWrapper">
           <h1>{data.site.siteMetadata.title}</h1>
           <h2>{data.site.siteMetadata.description}</h2>

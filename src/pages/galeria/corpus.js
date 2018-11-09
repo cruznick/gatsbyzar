@@ -5,18 +5,18 @@ import Layout from '../../components/Layout'
 import Gallery from '../../components/Gallery'
 import GeneralWrapper from '../../components/GeneralWrapper'
 
-const MadaGallery = ({ data }) => (
+const CorpusGallery = ({ data }) => (
   <Layout>
     <GeneralWrapper>
-      <Gallery photos={data.MadaImg.edges} />
+      <Gallery photos={data.CorpusImg.edges} />
     </GeneralWrapper>
   </Layout>
 )
 
 export const query = graphql`
   query {
-    MadaImg: allFile(
-      filter: { sourceInstanceName: { eq: "images" }, relativeDirectory: { eq: "mada" } }
+    CorpusImg: allFile(
+      filter: { sourceInstanceName: { eq: "images" }, relativeDirectory: { eq: "corpus" } }
     ) {
       edges {
         node {
@@ -30,4 +30,4 @@ export const query = graphql`
     }
   }
 `
-export default MadaGallery
+export default CorpusGallery

@@ -23,20 +23,16 @@ const IndexPage = ({
             </div>
           </div>
           <Img
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-            }}
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
             fluid={RepCover.childImageSharp.fluid}
             fadeIn
           />
         </div>
       </div>
       <div className="rightContent">
-        <div className="content">{Posts}</div>
+        <div className="content">
+          <div className="innerContent">{Posts}</div>
+        </div>
       </div>
     </Layout>
   )

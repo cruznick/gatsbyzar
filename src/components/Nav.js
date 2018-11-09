@@ -4,7 +4,7 @@ import { scaleRotate as Menu } from 'react-burger-menu'
 
 export default props => (
   // Pass on our props
-  <Menu width="30%" {...props}>
+  <Menu width="50%" {...props}>
     <Link to="/">
       <h3>Inicio</h3>
     </Link>

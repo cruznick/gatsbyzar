@@ -36,7 +36,9 @@ const IndexPage = ({
         </div>
       </div>
       <div className="rightContent">
-        <div className="content">{Posts}</div>
+        <div className="content">
+          <div className="innerContent">{Posts}</div>
+        </div>
       </div>
     </Layout>
   )

@@ -3,6 +3,8 @@ templateKey: page
 title: "Que el fuego pese y la tierra se aligere"
 description: "Texto sobre montaje"
 cover: /img/cover-renac.jpg
+ytId: "kmaBVvj2tIU"
+gallery: "renac"
 ---
 
 # Reseña del Montaje:

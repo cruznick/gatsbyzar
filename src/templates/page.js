@@ -1,22 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
+import { FiImage } from 'react-icons/fi'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import ModalYoutube from '../components/ModalYoutube'
+import GeneralWrapper from '../components/GeneralWrapper'
 
-export const PageTemplate = ({ title, content, contentComponent, cover }) => {
+export const PageTemplate = ({ title, content, contentComponent, cover, ytId, gallery }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <React.Fragment>
+    <>
       <Helmet title={`${title}`} />
       <div className="leftContent">
         <div className="titles">
           <div className="pageTitle">
             <div className="titleContent">
               <h2>{title}</h2>
+              <div className="innerLinks">
+                <GeneralWrapper>
+                  <ModalYoutube video={ytId} />
+                  <button type="button" className="ytButton">
+                    <Link to={`/galeria/${gallery}`}>
+                      <FiImage className="svgFont" />
+                    </Link>
+                  </button>
+                </GeneralWrapper>
+              </div>
             </div>
           </div>
           <Img
@@ -30,7 +43,7 @@ export const PageTemplate = ({ title, content, contentComponent, cover }) => {
           <PageContent className="innerContent" content={content} />
         </div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 
@@ -39,6 +52,8 @@ PageTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   cover: PropTypes.object,
+  ytId: PropTypes.string,
+  gallery: PropTypes.string,
 }
 
 const Page = ({ data }) => {
@@ -51,6 +66,8 @@ const Page = ({ data }) => {
         title={post.frontmatter.title}
         content={post.html}
         cover={post.frontmatter.cover.childImageSharp}
+        ytId={post.frontmatter.ytId}
+        gallery={post.frontmatter.gallery}
       />
     </Layout>
   )
@@ -68,6 +85,8 @@ export const PageQuery = graphql`
       html
       frontmatter {
         title
+        ytId
+        gallery
         cover {
           childImageSharp {
             fluid(maxWidth: 1000) {

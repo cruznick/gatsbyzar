@@ -3,7 +3,7 @@
 
 .bm-item {
   display: inline-block;
-  text-align: justify;
+  text-align: center;
   /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 1em;
@@ -32,7 +32,7 @@
 /* Color/shape of burger icon bars */
 
 .bm-burger-bars {
-  background: $dark;
+  background: $light-gray;
 }
 
 /* Position and sizing of clickable cross button */
@@ -67,5 +67,3 @@
 .bm-item-list {
   color: #b8b7ad;
 }
-
-

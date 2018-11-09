@@ -3,6 +3,8 @@ templateKey: page
 title: "Entre Chinacos y Madamitas"
 description: "Texto sobre montaje"
 cover: /img/cover-mada.jpg
+ytId: "oOHHwjw-hvY"
+gallery: "mada"
 ---
 
 # Manifestaciones dancísticas y teatrales del barroco novohispano

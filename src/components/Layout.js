@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Helmet from 'react-helmet'
-
 import Nav from './Nav'
 import '../scss/main.scss'
 

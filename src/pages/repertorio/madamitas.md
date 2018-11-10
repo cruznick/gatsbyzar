@@ -7,23 +7,23 @@ ytId: "oOHHwjw-hvY"
 gallery: "mada"
 ---
 
-# Manifestaciones dancísticas y teatrales del barroco novohispano
+# Danzas y Teatro del Segundo Imperio Mexicano
 
 ## Reseña del Montaje:
 
-Basado en esta celebración novohispana, en la que participaba toda la Ciudad de
-México, se fundamenta en documentos pertenecientes al fondo reservado de la UNAM,
-El Archivo General de la Nación y El Archivo de Indias de Sevilla, en los que dan
-noticias de cómo eran los pobladores de la Ciudad de México entre los años 1670
-y 1730, a través de los recuerdos de una educanda del colegio de San Miguel de Belén.
+Basada en crónicas de El lunes de la Emperatriz, La Gaceta del Imperio, El Cronista de México, El
+Siglo XIX, La Sociedad y El Libro de Bailes de Sala de Domingo Ibarra, conformada por danzas de
+salón, danzas populares y espectáculos del ámbito teatral y callejero. Con ello se pretende dar
+a conocer una parte del legado de las manifestaciones artísticas, los divertimentos y costumbres
+de la vida cotidiana de México en el siglo XIX.
 
-### Programa:
+## Programa:
 
-1. Colegialas de San Miguel de Bethlem
-2. Procesión de la Virgen
-3. Callejón del Espíritu Santo
-4. Real Convento de Jesús María
-5. Colegio de las doncellas de Nuestra Señora de la Caridad
-6. Plaza Mayor de la Ciudad de México
-7. Auto Sacramental
-8. En la Catedral de México
+1. Salida de Miramar
+2. La fiebre amarilla
+3. Camino a la Ciudad de México
+4. El gran baile imperial
+5. Volantineros y Maromas
+6. La pulquería de Santa Anita
+7. El Teatro Principal
+8. Locura y Muerte, el segundo viaje del Novara

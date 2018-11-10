@@ -20,13 +20,6 @@ const IndexPage = ({
           <div className="pageTitle">
             <div className="titleContent">
               <h1>Acerca</h1>
-              <p>
-                1998 es el punto de partida de la compañía, toma su nombre de una danza popular
-                novohispana, sus quehaceres coreográficos pretenden concentrarse en el enorme bagaje
-                cultural que ha conformado la danza en el pasado y crear una propuesta escénica en
-                el presente para construirnos entendiendo quienes somos evocando lo que era para no
-                olvidar.
-              </p>
             </div>
           </div>
           <Img
@@ -37,7 +30,19 @@ const IndexPage = ({
       </div>
       <div className="rightContent">
         <div className="content">
-          <div className="innerContent">{Posts}</div>
+          <div className="innerContent">
+            <p>
+              1998 es el punto de partida de la compañía, toma su nombre de una danza popular
+              novohispana, sus quehaceres coreográficos pretenden concentrarse en el enorme bagaje
+              cultural que ha conformado la danza en el pasado y crear una propuesta escénica en el
+              presente para construirnos entendiendo quienes somos evocando lo que era para no
+              olvidar.
+            </p>
+            <div className="titleContent">
+              <h2>Dirección:</h2>
+            </div>
+            {Posts}
+          </div>
         </div>
       </div>
     </Layout>

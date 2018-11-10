@@ -10,29 +10,27 @@ export const DirPageTemplate = ({ title, content, contentComponent, cover }) => 
   const DirPageContent = contentComponent || Content
 
   return (
-    <React.Fragment>
+    <>
       <Helmet title={`${title}`} />
       <div className="leftContent">
         <div className="titles">
           <div className="pageTitle">
-            <h2>{title}</h2>
+            <div className="titleContent">
+              <h2>{title}</h2>
+            </div>
           </div>
           <Img
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-            }}
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
             fluid={cover.fluid}
           />
         </div>
       </div>
       <div className="rightContent">
-        <DirPageContent className="content" content={content} />
+        <div className="content">
+          <DirPageContent className="innerContent" content={content} />
+        </div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 

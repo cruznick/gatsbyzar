@@ -25,7 +25,7 @@
 .content {
   display: table;
   height: 100vh;
-  background-color: $dark;
+  background-color: $dark-wine;
   width: 100%;
     .innerContent {
       display: table-cell;
@@ -33,12 +33,21 @@
       padding: 1rem;
     }
 }
+.socialLinks {
+  font-size: 2.5em;
+  display: inline-table;
+    a {
+      display: inline-block;
+      padding: 0 .2em;
+    }
 
-.innerLinks{
+
+}
+.innerLinks {
   display: inline-table;
     .ytButton {
       border: 0;
-      margin: .2rem;
+      margin: .2em;
       font-size: 2.5em;
       padding: 0;
       background: transparent;
@@ -47,6 +56,7 @@
     }
 }
 .svgFont {
+
   color: $base-font-color;
     &:hover {
       color: $action-color;

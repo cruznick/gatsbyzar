@@ -2,8 +2,8 @@
 templateKey: page
 title: "Día de Corpus"
 description: "Texto sobre montaje"
-cover: /img/cover-herida.jpg
-ytId: "mFxt68GeaiA"
+cover: /img/cover-corpus.jpg
+ytId: "IOmLrPHkD28"
 gallery: "corpus"
 ---
 

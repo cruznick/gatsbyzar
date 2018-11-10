@@ -4,11 +4,12 @@
 .bm-item {
   display: inline-block;
   text-align: center;
-  /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 1em;
   color: $light-gray;
   transition: color 0.2s;
+  font-family: $heading-font-family;
+  font-size: modular-scale(1.5);
 }
 
 /* Change color on hover */

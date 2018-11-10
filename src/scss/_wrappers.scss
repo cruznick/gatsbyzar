@@ -1,7 +1,7 @@
 
 #mainWrapper {
   @include grid-container;
-  background-color: $light-gray;
+  background-color: $dark;
   /* Give app full page to work with */
   height: 100vh;
 }
@@ -27,4 +27,36 @@
   }
 }
 
+.contentWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: table;
+  background: $dw-transparency;
+}
 
+.centerContent {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 2;
+  position: relative;
+}
+
+.postContentWrapper {
+  width: 100%;
+  height: 100vh;
+  display: table;
+  background: $dw-transparency;
+}
+.postCenterContent {
+  width: 60vw;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
+  text-align: justify;
+  vertical-align: middle;
+  padding: 5em;
+  z-index: 2;
+  position: relative;
+}

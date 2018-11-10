@@ -1,24 +1,42 @@
 import React from 'react'
+import { kebabCase } from 'lodash'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const BlogPostTemplate = ({ content, contentComponent, description, title, helmet }) => {
+export const BlogPostTemplate = ({
+  content,
+  contentComponent,
+  description,
+  tags,
+  title,
+  helmet,
+}) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="contentWrapper">
+    <div className="postContentWrapper">
       {helmet || ''}
-      <div className="leftContent">
+      <div className="postCenterContent">
         <h1>{title}</h1>
         <p>{description}</p>
-      </div>
-      <div className="rightContent">
         <PostContent content={content} />
+        {tags && tags.length ? (
+          <div style={{ marginTop: `4rem` }}>
+            <h4>Etiquetas</h4>
+            <ul className="taglist">
+              {tags.map(tag => (
+                <li key={`${tag}tag`}>
+                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
-    </section>
+    </div>
   )
 }
 
@@ -27,6 +45,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  tags: PropTypes.array,
   helmet: PropTypes.instanceOf(Helmet),
 }
 
@@ -64,6 +83,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        tags
       }
     }
   }

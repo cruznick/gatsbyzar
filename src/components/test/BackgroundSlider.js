@@ -7,7 +7,7 @@ import injectCss from './injectCss'
 const NAME = 'ReactBackgroundSlider'
 
 class BackgroundSlider extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const { images, duration, transition } = this.props
 
     injectCss(

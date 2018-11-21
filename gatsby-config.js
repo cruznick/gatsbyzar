@@ -1,3 +1,6 @@
+/* eslint-disable max-len */
+require(`dotenv`).config({ path: `.env` })
+
 module.exports = {
   siteMetadata: {
     title: 'Zarambeques y Muecas',
@@ -12,28 +15,15 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-zopfli',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        name: 'Zarambeques y Muecas',
-        short_name: 'Z&M',
-        start_url: '/',
-        background_color: '#000',
-        theme_color: '#000',
-        display: 'minimal-ui',
-        icon: 'src/img/logo2.png', // This path is relative to the root of the site.
+        spaceId: process.env.CONTENTFUL_SPACE_ID, // space id here
+        accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN, // access token here
       },
     },
     'gatsby-plugin-offline',
-
-    // Including in your Gatsby plugins will transform any paths in your frontmatter
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/static/img`,
-        name: 'assets',
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -46,15 +36,23 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-relative-images`,
+            resolve: 'gatsby-remark-images-grid',
             options: {
-              name: 'assets',
+              className: 'imgGrid',
+              gridGap: '20px',
+              margin: '20px auto',
             },
           },
           {
-            resolve: `gatsby-remark-images`,
-            options: {},
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 400,
+              linkImagesToOriginal: true,
+              withWebp: true,
+              quality: 70,
+            },
           },
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
@@ -67,23 +65,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {},
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
   ],
 }

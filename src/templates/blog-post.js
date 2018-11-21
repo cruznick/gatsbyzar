@@ -1,90 +1,53 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-danger */
 import React from 'react'
-import { kebabCase } from 'lodash'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-}) => {
-  const PostContent = contentComponent || Content
-
-  return (
-    <div className="postContentWrapper">
-      {helmet || ''}
-      <div className="postCenterContent">
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <PostContent content={content} />
-        {tags && tags.length ? (
-          <div style={{ marginTop: `4rem` }}>
-            <h4>Etiquetas</h4>
-            <ul className="taglist">
-              {tags.map(tag => (
-                <li key={`${tag}tag`}>
-                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </div>
-    </div>
-  )
-}
-
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  tags: PropTypes.array,
-  helmet: PropTypes.instanceOf(Helmet),
-}
-
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+const BlogPostTemplate = ({ data, location }) => {
+  const { title, description, body, image } = data.contentfulBlog
 
   return (
     <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-      />
+      <Helmet>
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="image" content={image.file.url} />
+        <meta property="og:url" content={`https://zarambeques.com${location.pathname}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image.file.url} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image.file.url} />
+      </Helmet>
+      <div className="postContentWrapper">
+        <div className="postCenterContent">
+          <h1>{title}</h1>
+          <p>{description}</p>
+          <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+        </div>
+      </div>
     </Layout>
   )
 }
 
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
-
-export default BlogPost
-
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        tags
+  query($slug: String!) {
+    contentfulBlog(slug: { eq: $slug }) {
+      slug
+      title
+      description
+      image {
+        file {
+          url
+        }
       }
     }
   }
 `
+export default BlogPostTemplate

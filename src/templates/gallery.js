@@ -8,7 +8,7 @@ import Gallery from '../components/Gallery'
 import GeneralWrapper from '../components/GeneralWrapper'
 
 const GalleryTemplate = ({ data, location }) => {
-  const { title, description, gallery, image } = data.contentfulPortafolio
+  const { title, description, gallery, image } = data.contentfulGaleria
 
   return (
     <Layout>
@@ -47,7 +47,7 @@ export const GalleryQuery = graphql`
       }
       gallery {
         fluid(maxWidth: 1000) {
-          ...GatsbyContentfulFluid
+          ...GatsbyContentfulFluid_withWebp
         }
       }
     }

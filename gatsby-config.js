@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'Zarambeques y Muecas',
     author: 'Benjamin J. Martinez',
-    description: 'CompaÃ±Ã­a de Danza & Teatro',
+    description: 'Compañía de Danza & Teatro',
     logo: 'src/img/logo2.png',
     fb: 'https://www.facebook.com/zarambequesymuecasdanza',
     twitter: 'https://www.twitter.com/zarambeques',
@@ -16,6 +16,23 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-zopfli',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Zarambeques & Muecas',
+        short_name: 'Z & M',
+        start_url: '/',
+        background_color: '#ffc999',
+        theme_color: '#ffc999',
+        display: 'minimal-ui',
+        icon: 'src/img/logo2.png', // This path is relative to the root of the site.
+      },
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -23,7 +40,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN, // access token here
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -63,9 +79,5 @@ module.exports = {
         name: 'pages',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-robots-txt',
-    'gatsby-plugin-sitemap',
   ],
 }

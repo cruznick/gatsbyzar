@@ -26,9 +26,11 @@ const BlogPostTemplate = ({ data, location }) => {
         <meta name="twitter:image" content={image.file.url} />
       </Helmet>
       <div className="postContentWrapper">
-        <div className="postCenterContent">
+        <div className="leftContent">
           <h1>{title}</h1>
           <p>{description}</p>
+        </div>
+        <div className="rightContent">
           <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
         </div>
       </div>
@@ -45,6 +47,11 @@ export const pageQuery = graphql`
       image {
         file {
           url
+        }
+      }
+      body {
+        childMarkdownRemark {
+          html
         }
       }
     }

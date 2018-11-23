@@ -19,6 +19,7 @@ $medium-purple: #C2B4D6;
 $light-gray: #e5e5e5;
 $dw-transparency: rgba(148, 58, 95, 0.40);
 $dark: #000;
+$white: #fff;
 
 // Font Colors
 $base-font-color: $light-gray;
@@ -51,7 +52,7 @@ $base-timing: ease;
 
 $neat-grid: (
   columns: 4,
-  gutter: 0,
+  gutter: 1px,
   media: "(min-width:768px)",
   color: red,
 );
@@ -59,13 +60,13 @@ $neat-grid: (
 $tablet: (
   columns: 6,
   media: "(min-width:1024px)",
-  gutter: 0,
+  gutter: 1px,
   color: yellow,
 );
 
 $desktop: (
   columns: 8,
   media: "(min-width:1920px)",
-  gutter: 0,
+  gutter: 1px,
   color:green,
 );

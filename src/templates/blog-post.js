@@ -3,6 +3,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -25,13 +26,27 @@ const BlogPostTemplate = ({ data, location }) => {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image.file.url} />
       </Helmet>
-      <div className="postContentWrapper">
-        <div className="leftContent">
-          <h1>{title}</h1>
-          <p>{description}</p>
+      <div className="leftContent">
+        <div className="blogWrapper">
+          <div className="titles">
+            <div className="pageTitle">
+              <div className="titleContent">
+                <h1>{title}</h1>
+                <p>{description}</p>
+              </div>
+            </div>
+            <Img
+              style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
+              fluid={image.fluid}
+            />
+          </div>
         </div>
-        <div className="rightContent">
-          <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+      </div>
+      <div className="rightContent">
+        <div className="content">
+          <div className="innerContent">
+            <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+          </div>
         </div>
       </div>
     </Layout>
@@ -47,6 +62,9 @@ export const pageQuery = graphql`
       image {
         file {
           url
+        }
+        fluid(maxWidth: 1280) {
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       body {

@@ -1,4 +1,3 @@
-
 #mainWrapper {
   @include grid-container;
   background-color: $dark;
@@ -8,24 +7,39 @@
 
 
 #wrapper {
+  @include grid-collapse;
   background-color: $dark;
   height: auto;
+  width: auto;
 }
 
 
-.siteTitles,
-.leftContent,
 .rightContent {
   text-align: justify;
   @include grid-column(4);
 
   @include grid-media($tablet) {
     @include grid-column(3);
+    @include grid-push(3);
+  }
+
+  @include grid-media($desktop) {
+    @include grid-column(4);
+  }
+}
+.leftContent {
+  text-align: justify;
+  @include grid-column(4);
+
+  @include grid-media($tablet) {
+    @include grid-column(3);
+    position: fixed;
   }
   @include grid-media($desktop) {
     @include grid-column(4);
   }
 }
+
 
 .contentWrapper {
   width: 100vw;

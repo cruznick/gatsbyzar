@@ -7,9 +7,8 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import NavLogo from '../components/NavLogo'
 
-const BlogPostTemplate = ({ data, location }) => {
-  const { title, description, body, image, date } = data.contentfulBlog
-
+const ContactPage = ({ data, location }) => {
+  const { title, description, image, body } = data.contentfulPaginas
   return (
     <Layout>
       <Helmet>
@@ -32,19 +31,14 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="titles">
             <div className="pageTitle">
               <div className="titleContent">
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <a href="#Contacto">
+                  <h1>{title}</h1>
+                </a>
               </div>
             </div>
           </div>
           <Img
-            style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-            }}
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
             fluid={image.fluid}
           />
         </div>
@@ -52,8 +46,30 @@ const BlogPostTemplate = ({ data, location }) => {
           <NavLogo />
           <div className="content">
             <div className="innerContent">
-              <div className="date">{date}</div>
-              <article dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+              <article
+                id="Contacto"
+                dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}
+              />
+              <div className="dividerSimple" />
+              <form action="//formspree.io/contacto@zarambeques.com" method="POST">
+                <label htmlFor="name">
+                  <input type="text" placeholder="Nombre" name="name" />
+                </label>
+                <label htmlFor="_replyto">
+                  <input
+                    type="email"
+                    placeholder="Tu email ... ejemplo@domain.com"
+                    name="_replyto"
+                  />
+                </label>
+                <label htmlFor="message">
+                  <textarea c name="message" rows="3" placeholder="Mensaje" />
+                </label>
+                <input type="hidden" name="_subject" value="Message via http://domain.com" />
+                <button className="svgFont" type="submit">
+                  Enviar
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -63,12 +79,16 @@ const BlogPostTemplate = ({ data, location }) => {
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
-      slug
+  query {
+    contentfulPaginas(title: { eq: "Contacto" }) {
       title
-      date(formatString: "MMM dddDD YYYY", locale: "es")
+      slug
       description
+      body {
+        childMarkdownRemark {
+          html
+        }
+      }
       image {
         file {
           url
@@ -77,12 +97,7 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid_withWebp
         }
       }
-      body {
-        childMarkdownRemark {
-          html
-        }
-      }
     }
   }
 `
-export default BlogPostTemplate
+export default ContactPage

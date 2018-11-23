@@ -27,8 +27,8 @@ module.exports = {
         name: 'Zarambeques & Muecas',
         short_name: 'Z & M',
         start_url: '/',
-        background_color: '#ffc999',
-        theme_color: '#ffc999',
+        background_color: '#3d1621',
+        theme_color: '#3d1621',
         display: 'minimal-ui',
         icon: 'src/img/logo2.png', // This path is relative to the root of the site.
       },

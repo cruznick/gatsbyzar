@@ -76,3 +76,55 @@
   z-index: 2;
   position: relative;
 }
+
+
+// date wrapper with brakets
+
+.date {
+  text-align: center;
+  margin: 2em;
+  border-bottom: solid 1px;
+  padding-bottom: 2em;
+    &::after {
+      content: " ]";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+    &::before {
+      content: "[ ";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+}
+
+
+.dividerBrackets {
+  text-align: center;
+  margin: 2em;
+  border-bottom: solid 1px;
+  padding-bottom: 2em;
+    &::after {
+      content: " ]";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+    &::before {
+      content: "[ ";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+}
+
+.dividerSimple {
+  text-align: center;
+  margin: 2em;
+  border-bottom: solid 1px;
+  padding-bottom: 2em;
+}
+.stageInfo,
+.postInfo,
+.staffInfo {
+  text-align: right;
+  border-bottom: solid 1px;
+  margin: .8em 0 .8em;
+}

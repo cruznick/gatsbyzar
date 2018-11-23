@@ -35,6 +35,66 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
+  const loadStaff = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulDireccion {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      if (result.errors) {
+        console.log(result.errors)
+        reject(result.errors)
+      }
+
+      result.data.allContentfulDireccion.edges.map(({ node }) => {
+        createPage({
+          path: `staff/${node.slug}/`,
+          component: path.resolve(`./src/templates/staff.js`),
+          context: {
+            slug: node.slug,
+          },
+        })
+      })
+      resolve()
+    })
+  })
+
+  const loadStage = new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allContentfulMontajes {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      if (result.errors) {
+        console.log(result.errors)
+        reject(result.errors)
+      }
+
+      result.data.allContentfulMontajes.edges.map(({ node }) => {
+        createPage({
+          path: `montajes/${node.slug}/`,
+          component: path.resolve(`./src/templates/stage.js`),
+          context: {
+            slug: node.slug,
+          },
+        })
+      })
+      resolve()
+    })
+  })
+
   const loadGallery = new Promise((resolve, reject) => {
     graphql(`
       {
@@ -65,5 +125,5 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  return Promise.all([loadBlog, loadGallery])
+  return Promise.all([loadBlog, loadStaff, loadStage, loadGallery])
 }

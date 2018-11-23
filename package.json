@@ -34,6 +34,7 @@
     "node-sass": "^4.9.2",
     "object-fit-images": "^3.2.4",
     "parcel-bundler": "^1.9.4",
+    "poly-fluid-sizing": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-burger-menu": "^2.5.4",

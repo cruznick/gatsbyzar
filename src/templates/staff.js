@@ -7,8 +7,8 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import NavLogo from '../components/NavLogo'
 
-const BlogPostTemplate = ({ data, location }) => {
-  const { title, description, body, image, date } = data.contentfulBlog
+const StaffTemplate = ({ data, location }) => {
+  const { title, description, body, image, position } = data.contentfulDireccion
 
   return (
     <Layout>
@@ -32,7 +32,9 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="titles">
             <div className="pageTitle">
               <div className="titleContent">
-                <h1>{title}</h1>
+                <a href="#Content">
+                  <h1>{title}</h1>
+                </a>
                 <p>{description}</p>
               </div>
             </div>
@@ -50,9 +52,9 @@ const BlogPostTemplate = ({ data, location }) => {
         </div>
         <div className="rightContent">
           <NavLogo />
-          <div className="content">
+          <div className="content" id="Content">
             <div className="innerContent">
-              <div className="date">{date}</div>
+              <div className="date">{position}</div>
               <article dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
             </div>
           </div>
@@ -64,10 +66,10 @@ const BlogPostTemplate = ({ data, location }) => {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+    contentfulDireccion(slug: { eq: $slug }) {
       slug
       title
-      date(formatString: "MMM dddDD YYYY", locale: "es")
+      position
       description
       image {
         file {
@@ -85,4 +87,4 @@ export const pageQuery = graphql`
     }
   }
 `
-export default BlogPostTemplate
+export default StaffTemplate

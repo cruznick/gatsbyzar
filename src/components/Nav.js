@@ -6,7 +6,7 @@ export default props => (
   // Pass on our props
   <Menu width="50%" {...props}>
     <Link to="/">Inicio</Link>
-    <Link to="/about">Acerca</Link>
+    <Link to="/acerca">Acerca</Link>
     <Link to="/montajes">Montajes</Link>
     <Link to="/blog">Blog</Link>
     <Link to="/contacto">Contacto</Link>

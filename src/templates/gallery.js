@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Gallery from '../components/Gallery'
 import GeneralWrapper from '../components/GeneralWrapper'
+import NavLogo from '../components/NavLogo'
 
 const GalleryTemplate = ({ data, location }) => {
   const { title, description, gallery, image } = data.contentfulGaleria
@@ -27,6 +28,7 @@ const GalleryTemplate = ({ data, location }) => {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image.file.url} />
       </Helmet>
+      <NavLogo />
       <GeneralWrapper>
         <Gallery photos={gallery} />
       </GeneralWrapper>

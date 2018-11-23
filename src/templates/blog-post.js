@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
+import NavLogo from '../components/NavLogo'
 
 const BlogPostTemplate = ({ data, location }) => {
   const { title, description, body, image } = data.contentfulBlog
@@ -26,8 +27,8 @@ const BlogPostTemplate = ({ data, location }) => {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image.file.url} />
       </Helmet>
-      <div className="leftContent">
-        <div className="blogWrapper">
+      <div className="contentWrapper">
+        <div className="leftContent">
           <div className="titles">
             <div className="pageTitle">
               <div className="titleContent">
@@ -35,17 +36,24 @@ const BlogPostTemplate = ({ data, location }) => {
                 <p>{description}</p>
               </div>
             </div>
-            <Img
-              style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
-              fluid={image.fluid}
-            />
           </div>
+          <Img
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              width: '100%',
+              height: '100%',
+            }}
+            fluid={image.fluid}
+          />
         </div>
-      </div>
-      <div className="rightContent">
-        <div className="content">
-          <div className="innerContent">
-            <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+        <div className="rightContent">
+          <NavLogo />
+          <div className="content">
+            <div className="innerContent">
+              <article dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
+            </div>
           </div>
         </div>
       </div>

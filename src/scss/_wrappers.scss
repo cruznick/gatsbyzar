@@ -1,76 +1,55 @@
 #mainWrapper {
   @include grid-container;
-  background-color: $dark;
+  background-color: $dark-wine;
   /* Give app full page to work with */
   height: 100vh;
 }
 
 
 #wrapper {
-  @include grid-collapse;
-  background-color: $dark;
-  height: auto;
-  width: auto;
+  background-color: $dark-wine;
+  height: 100%;
+  width: 100%;
 }
 
 
 .rightContent {
   text-align: justify;
-  @include grid-column(4);
+  @include grid-column(1);
 
   @include grid-media($tablet) {
-    @include grid-column(3);
-    @include grid-push(3);
-  }
+    @include grid-column(1);
+    float: right;
 
-  @include grid-media($desktop) {
-    @include grid-column(4);
   }
 }
 .leftContent {
   text-align: justify;
-  @include grid-column(4);
+  @include grid-column(1);
 
   @include grid-media($tablet) {
-    @include grid-column(3);
+    @include grid-column(1);
     position: fixed;
-  }
-  @include grid-media($desktop) {
-    @include grid-column(4);
+    height: 100%;
   }
 }
 
 
 .contentWrapper {
-  width: 100vw;
-  height: 100vh;
-  display: table;
-  background: $dw-transparency;
-}
-
-.centerContent {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  z-index: 2;
-  position: relative;
-}
-
-.postContentWrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: table;
   background: $dw-transparency;
 }
-.postCenterContent {
-  width: 60vw;
-  height: 100%;
+
+
+
+
+.smallLogoContainer {
+  display: block;
+  width: 10%;
   margin-left: auto;
   margin-right: auto;
-  display: table-cell;
-  text-align: justify;
-  vertical-align: middle;
-  padding: 5em;
-  z-index: 2;
-  position: relative;
+  margin-top: 2em;
+  margin-top: 2em;
 }

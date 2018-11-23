@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'Zarambeques y Muecas',
     author: 'Benjamin J. Martinez',
-    description: 'Compañía de Danza & Teatro',
+    description: 'CompaÃ±Ã­a de Danza & Teatro',
     logo: 'src/img/logo2.png',
     fb: 'https://www.facebook.com/zarambequesymuecasdanza',
     twitter: 'https://www.twitter.com/zarambeques',

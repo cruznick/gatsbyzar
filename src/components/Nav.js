@@ -9,6 +9,7 @@ export default props => (
     <Link to="/acerca">Acerca</Link>
     <Link to="/montajes">Montajes</Link>
     <Link to="/blog">Blog</Link>
+    <Link to="/galerias">Galerías</Link>
     <Link to="/contacto">Contacto</Link>
   </Menu>
 )

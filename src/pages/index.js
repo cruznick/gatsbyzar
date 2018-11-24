@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { FiFacebook, FiInstagram, FiYoutube, FiTwitter } from 'react-icons/fi'
 import { Helmet } from 'react-helmet'
 import BackgroundSlider from '../components/test/index'
+import Logo from '../img/logo2.png'
 import Layout from '../components/Layout'
 import Img1 from '../img/home/Slide-01.jpg'
 import Img2 from '../img/home/Slide-02.jpg'
@@ -16,9 +17,23 @@ import Img8 from '../img/home/Slide-08.jpg'
 import Img9 from '../img/home/Slide-09.jpg'
 import Img10 from '../img/home/Slide-10.jpg'
 
-const MainIndex = ({ data }) => (
+const MainIndex = ({ data, location }) => (
   <Layout>
-    <Helmet title={data.site.siteMetadata.title} />
+    <Helmet>
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>{data.site.siteMetadata.title}</title>
+      <meta name="description" content={data.site.siteMetadata.description} />
+      <meta name="image" content={Logo} />
+      <meta property="og:url" content={`https://zarambeques.com${location.pathname}`} />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={data.site.siteMetadata.title} />
+      <meta property="og:description" content={data.site.siteMetadata.description} />
+      <meta property="og:image" content={Logo} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={data.site.siteMetadata.title} />
+      <meta name="twitter:description" content={data.site.siteMetadata.description} />
+      <meta name="twitter:image" content={Logo} />
+    </Helmet>
     <div className="contentWrapper">
       <div className="centerContent">
         <h1>{data.site.siteMetadata.title}</h1>

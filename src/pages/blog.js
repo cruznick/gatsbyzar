@@ -6,47 +6,47 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import NavLogo from '../components/NavLogo'
-import StageLink from '../components/StageLink'
+import PostLink from '../components/PostLink'
 
-const MontajesPage = ({
+const BlogPage = ({
   data: {
-    StageQuery: { edges },
-    MontajesQuery,
+    PostQuery: { edges },
+    BlogQuery,
   },
   location,
 }) => {
-  const Stages = edges.map(edge => <StageLink key={edge.node.slug} stage={edge.node} />)
+  const Posts = edges.map(edge => <PostLink key={edge.node.slug} post={edge.node} />)
   return (
     <Layout>
       <Helmet>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{MontajesQuery.title}</title>
-        <meta name="description" content={MontajesQuery.description} />
-        <meta name="image" content={MontajesQuery.image.file.url} />
+        <title>{BlogQuery.title}</title>
+        <meta name="description" content={BlogQuery.description} />
+        <meta name="image" content={BlogQuery.image.file.url} />
         <meta property="og:url" content={`https://zarambeques.com${location.pathname}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={MontajesQuery.title} />
-        <meta property="og:description" content={MontajesQuery.description} />
-        <meta property="og:image" content={MontajesQuery.image.file.url} />
+        <meta property="og:title" content={BlogQuery.title} />
+        <meta property="og:description" content={BlogQuery.description} />
+        <meta property="og:image" content={BlogQuery.image.file.url} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={MontajesQuery.title} />
-        <meta name="twitter:description" content={MontajesQuery.description} />
-        <meta name="twitter:image" content={MontajesQuery.image.file.url} />
+        <meta name="twitter:title" content={BlogQuery.title} />
+        <meta name="twitter:description" content={BlogQuery.description} />
+        <meta name="twitter:image" content={BlogQuery.image.file.url} />
       </Helmet>
       <div className="contentWrapper">
         <div className="leftContent">
           <div className="titles">
             <div className="pageTitle">
               <div className="titleContent">
-                <a href="#Montajes">
-                  <h1>{MontajesQuery.title}</h1>
+                <a href="#Blog">
+                  <h1>{BlogQuery.title}</h1>
                 </a>
               </div>
             </div>
           </div>
           <Img
             style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}
-            fluid={MontajesQuery.image.fluid}
+            fluid={BlogQuery.image.fluid}
           />
         </div>
         <div className="rightContent">
@@ -54,12 +54,12 @@ const MontajesPage = ({
           <div className="content">
             <div className="innerContent">
               <article
-                id="Montajes"
-                dangerouslySetInnerHTML={{ __html: MontajesQuery.body.childMarkdownRemark.html }}
+                id="Blog"
+                dangerouslySetInnerHTML={{ __html: BlogQuery.body.childMarkdownRemark.html }}
               />
-              <p>{MontajesQuery.description}</p>
+              <p>{BlogQuery.description}</p>
               <div className="dividerSimple" />
-              {Stages}
+              {Posts}
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const MontajesPage = ({
 
 export const pageQuery = graphql`
   query {
-    MontajesQuery: contentfulPaginas(title: { eq: "Montajes" }) {
+    BlogQuery: contentfulPaginas(title: { eq: "Blog" }) {
       title
       slug
       description
@@ -88,7 +88,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    StageQuery: allContentfulMontajes(sort: { order: DESC, fields: [title] }) {
+    PostQuery: allContentfulBlog(sort: { order: DESC, fields: [date] }) {
       edges {
         node {
           slug
@@ -99,4 +99,4 @@ export const pageQuery = graphql`
     }
   }
 `
-export default MontajesPage
+export default BlogPage

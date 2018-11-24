@@ -1,0 +1,42 @@
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	outline: 2px solid #FFF;
+	outline-offset: -2px;
+	border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
+
+// styling blockquote
+blockquote {
+  position: relative;
+  font-style: italic;
+  &::before {
+      content: '\201C';
+      position: absolute;
+      top: -.15em;
+      left: -0.6em;
+      color: darken($white, 7%);
+      font-size: 5em;
+      font-family: $heading-font-family;
+  }
+  &:after {
+    content: '\201D';
+    position: absolute;
+    top: -.15em;
+    right: -.6em;
+    color: darken($white, 7%);
+    font-size: 5em;
+    font-family: $heading-font-family;
+  }
+}

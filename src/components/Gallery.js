@@ -15,9 +15,7 @@ class Gallery extends Component {
       anchorEl: null,
       lightbox: false,
       currentImage: 0,
-      photos: props.photos.map(photo =>
-        Object.assign({ srcSet: photo.node.childImageSharp.fluid.srcSet })
-      ),
+      photos: props.photos.map(photo => Object.assign({ srcSet: photo.fluid.srcSet })),
     }
   }
 
@@ -44,15 +42,11 @@ class Gallery extends Component {
     const { photos } = this.props
     return (
       <>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 4, 900: 6 }}>
           <Masonry gutter="1rem">
             {photos.map((photo, i) => (
-              <a
-                key={i}
-                href={photo.node.childImageSharp.fluid.srcSet}
-                onClick={e => this.openLightbox(i, e)}
-              >
-                <Img fluid={photo.node.childImageSharp.fluid} />
+              <a key={i} href={photo.fluid.srcSet} onClick={e => this.openLightbox(i, e)}>
+                <Img fluid={photo.fluid} />
               </a>
             ))}
           </Masonry>

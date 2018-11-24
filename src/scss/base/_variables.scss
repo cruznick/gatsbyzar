@@ -1,7 +1,7 @@
 // Typography
 $base-font-family: 'Raleway', sans-serif;
 $heading-font-family: 'Old Standard TT', serif;
-
+$base-font-size: 2em;
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
@@ -14,14 +14,15 @@ $base-z-index: 0;
 
 // Colors
 $blue: #57648C;
-$dark-wine: #934a5f;
+$dark-wine: #3d1621;
 $medium-purple: #C2B4D6;
 $light-gray: #e5e5e5;
 $dw-transparency: rgba(148, 58, 95, 0.40);
 $dark: #000;
+$white: #fff;
 
 // Font Colors
-$base-font-color: $light-gray;
+$base-font-color: $white;
 $action-color: $dark-wine;
 
 // Border
@@ -29,7 +30,7 @@ $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$viewport-background-color: $light-gray;
+$viewport-background-color: $dark-wine;
 
 // Focus
 $focus-outline-color: transparentize($action-color, 0.4);
@@ -50,21 +51,21 @@ $base-timing: ease;
 // Grid
 
 $neat-grid: (
-  columns: 4,
+  columns: 1,
   gutter: 0,
   media: "(min-width:768px)",
   color: red,
 );
 
 $tablet: (
-  columns: 6,
+  columns: 2,
   media: "(min-width:1024px)",
   gutter: 0,
   color: yellow,
 );
 
 $desktop: (
-  columns: 8,
+  columns: 2,
   media: "(min-width:1920px)",
   gutter: 0,
   color:green,

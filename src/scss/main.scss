@@ -1,8 +1,9 @@
-@import "../../node_modules/bourbon/core/_bourbon";
-@import "base/base";
-@import "../../node_modules/bourbon-neat/core/_neat";
+@import '../../node_modules/poly-fluid-sizing/poly-fluid-sizing';
+@import '../../node_modules/bourbon/core/_bourbon';
+@import 'base/base';
+@import '../../node_modules/bourbon-neat/core/_neat';
 @import 'node_modules/react-modal-video/scss/modal-video.scss';
-@import "slider";
-@import "nav";
-@import "wrappers";
-@import "page";
+@import 'nav';
+@import 'wrappers';
+@import 'page';
+@import 'utils';

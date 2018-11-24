@@ -1,38 +1,41 @@
 .titles {
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  height: 100%;
 
 }
 
 .pageTitle {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQYV2NkYGD4z8DAwMgAAcZwBgMDw1mQCEwALAsSBAmAGTAtAI/dBGtJ/y1zAAAAAElFTkSuQmCC) repeat;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAE0lEQVQYV2NkYGAwZkADjDQQBAA8aQEF8uKJwAAAAABJRU5ErkJggg==) repeat;
   z-index: 3;
   position: relative;
-  color: $light-gray;
+  color: $white;
   display: table;
   width: 100%;
-  height: 100vh;
-    .titleContent {
-      text-align: center;
-      display: table-cell;
-      vertical-align: middle;
-      font-weight: 600;
-    }
+  height: 100%;
 
+}
+
+.titleContent {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .content {
   display: table;
-  height: 100vh;
-  background-color: $dark-wine;
   width: 100%;
-    .innerContent {
-      display: table-cell;
-      vertical-align: middle;
-      padding: 1rem;
-    }
+  padding: 2em;
 }
+
+.innerContent {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 2em;
+  padding: 1rem;
+}
+
 .socialLinks {
   font-size: 2.5em;
   display: inline-table;
@@ -61,4 +64,69 @@
     &:hover {
       color: $action-color;
     }
+}
+
+
+
+
+.centerContent {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 2;
+  position: relative;
+}
+
+
+// date wrapper with brakets
+
+.date {
+  text-align: center;
+  margin: 2em;
+  border-bottom: solid 1px;
+  padding-bottom: 2em;
+    &::after {
+      content: " ]";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+    &::before {
+      content: "[ ";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+}
+
+
+.dividerBrackets {
+  text-align: center;
+  margin: 2em;
+  border-bottom: solid 1px;
+  padding-bottom: 2em;
+    &::after {
+      content: " ]";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+    &::before {
+      content: "[ ";
+      font-family: $heading-font-family;
+      font-size: 1.5em;
+    }
+}
+
+.dividerSimple {
+  text-align: center;
+  margin: 2em;
+  border-bottom: solid 1px;
+  padding-bottom: 2em;
+}
+
+.galleryInfo,
+.stageInfo,
+.postInfo,
+.staffInfo {
+  text-align: right;
+  border-bottom: solid 1px;
+  margin: .8em 0 .8em;
 }

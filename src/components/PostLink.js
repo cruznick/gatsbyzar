@@ -3,8 +3,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const PostLink = ({ post }) => (
-  <div>
-    <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+  <div className="postLink">
+    <div className="postInfo">
+      <Link to={`/blog/${post.slug}`}>
+        <h4>{post.title}</h4>
+      </Link>
+      <p>{post.description}</p>
+    </div>
   </div>
 )
 

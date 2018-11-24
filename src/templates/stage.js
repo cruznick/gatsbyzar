@@ -2,13 +2,16 @@
 /* eslint-disable react/no-danger */
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { FiImage } from 'react-icons/fi'
 import Layout from '../components/Layout'
 import NavLogo from '../components/NavLogo'
+import GeneralWrapper from '../components/GeneralWrapper'
+import ModalYoutube from '../components/ModalYoutube'
 
-const BlogPostTemplate = ({ data, location }) => {
-  const { title, description, body, image, date } = data.contentfulBlog
+const StageTemplate = ({ data, location }) => {
+  const { title, description, body, image, youTubeId, gallery } = data.contentfulMontajes
 
   return (
     <Layout>
@@ -32,8 +35,21 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="titles">
             <div className="pageTitle">
               <div className="titleContent">
-                <h1>{title}</h1>
-                <p>{description}</p>
+                <a href="#Content">
+                  <a href="#Content">
+                    <h1>{title}</h1>
+                  </a>
+                </a>
+                <div className="innerLinks">
+                  <GeneralWrapper>
+                    <ModalYoutube video={youTubeId} />
+                    <button type="button" className="ytButton">
+                      <Link to={`/galeria/${gallery}`}>
+                        <FiImage className="svgFont" />
+                      </Link>
+                    </button>
+                  </GeneralWrapper>
+                </div>
               </div>
             </div>
           </div>
@@ -50,9 +66,9 @@ const BlogPostTemplate = ({ data, location }) => {
         </div>
         <div className="rightContent">
           <NavLogo />
-          <div className="content">
+          <div className="content" id="Content">
             <div className="innerContent">
-              <div className="date">{date}</div>
+              <div className="dividerSimple" />
               <article dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }} />
             </div>
           </div>
@@ -64,11 +80,12 @@ const BlogPostTemplate = ({ data, location }) => {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+    contentfulMontajes(slug: { eq: $slug }) {
       slug
       title
-      date(formatString: "MMM dddDD YYYY", locale: "es")
       description
+      youTubeId
+      gallery
       image {
         file {
           url
@@ -85,4 +102,4 @@ export const pageQuery = graphql`
     }
   }
 `
-export default BlogPostTemplate
+export default StageTemplate
